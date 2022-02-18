@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "944758551822",
+    "project_id": "advanced-tourist",
+    "storage_bucket": "advanced-tourist.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:944758551822:android:1163b102dd85968a78d35f",
+        "android_client_info": {
+          "package_name": "com.example.advanced_tourist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "944758551822-9p5lngpf5b8q2svlda23hjt0ngard9ek.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRQiQaymDhN8ATfiED6ehXP6GsDLFNOQA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "944758551822-9p5lngpf5b8q2svlda23hjt0ngard9ek.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
