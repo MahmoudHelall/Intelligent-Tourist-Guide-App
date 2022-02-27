@@ -1,32 +1,334 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Agency">
+    tools:context=".Agency"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <EditText
+            android:id="@+id/tripTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="31dp"
+            android:ems="10"
+            android:hint="Trip Title"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="logoutagency"
-        android:onClick="logoutagency"
-        tools:layout_editor_absoluteX="٢٥dp"
-        tools:layout_editor_absoluteY="٦٤dp"
-        tools:ignore="MissingConstraints" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="251dp"
+            android:layout_height="127dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tripTitle"
+            app:srcCompat="@android:drawable/ic_menu_gallery" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="155dp"
-        android:layout_marginTop="289dp"
-        android:layout_marginEnd="198dp"
-        android:layout_marginBottom="423dp"
-        android:text="logout"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+            android:id="@+id/price2P"
+            android:layout_width="139dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="98dp"
+            android:ems="10"
+            android:hint="2 Persons"
+            android:inputType="number"
+            app:layout_constraintBottom_toBottomOf="@+id/singlePrice"
+            app:layout_constraintStart_toEndOf="@+id/singlePrice"
+            app:layout_constraintTop_toTopOf="@+id/singlePrice" />
+
+        <EditText
+            android:id="@+id/price6P"
+            android:layout_width="139dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="98dp"
+            android:ems="10"
+            android:hint="More than 6"
+            android:inputType="number"
+            app:layout_constraintBottom_toBottomOf="@+id/price3p"
+            app:layout_constraintStart_toEndOf="@+id/price3p"
+            app:layout_constraintTop_toTopOf="@+id/price3p" />
+
+        <Button
+            android:id="@+id/getLocationButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:text="Get Location"
+            app:layout_constraintBottom_toBottomOf="@+id/longitudeInput"
+            app:layout_constraintStart_toEndOf="@+id/latitudeInput"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="160dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="71dp"
+            android:layout_marginTop="9dp"
+            android:text="main place Location"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/priceChildren16" />
+
+        <EditText
+            android:id="@+id/longitudeInput"
+            android:layout_width="160dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="Location (Long)"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/latitudeInput" />
+
+        <Button
+            android:id="@+id/addPlacesButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:text="Add Place"
+            app:layout_constraintBottom_toBottomOf="@+id/placestextInput"
+            app:layout_constraintStart_toEndOf="@+id/placestextInput"
+            app:layout_constraintTop_toTopOf="@+id/placestextInput"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/priceChildren6"
+            android:layout_width="139dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="98dp"
+            android:layout_marginTop="5dp"
+            android:ems="10"
+            android:hint="Less than (6 age)"
+            android:inputType="number"
+            app:layout_constraintStart_toEndOf="@+id/priceChildren16"
+            app:layout_constraintTop_toBottomOf="@+id/price6P" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="53dp"
+            android:layout_marginTop="57dp"
+            android:text="Prices"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/languagesTourist" />
+
+        <EditText
+            android:id="@+id/priceChildren16"
+            android:layout_width="139dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="9dp"
+            android:ems="10"
+            android:hint="Children(6-16)"
+            android:inputType="number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/price3p" />
+
+        <EditText
+            android:id="@+id/latitudeInput"
+            android:layout_width="165dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="29dp"
+            android:ems="10"
+            android:hint="Location (Lat)"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <EditText
+            android:id="@+id/price3p"
+            android:layout_width="139dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="14dp"
+            android:ems="10"
+            android:hint="3 - 5 Persons"
+            android:inputType="number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/singlePrice" />
+
+        <EditText
+            android:id="@+id/singlePrice"
+            android:layout_width="139dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="11dp"
+            android:ems="10"
+            android:hint="Single "
+            android:inputType="number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <Button
+            android:id="@+id/addTrip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Add Trip"
+            app:layout_constraintEnd_toEndOf="@+id/tripType"
+            app:layout_constraintStart_toStartOf="@+id/tripType"
+            app:layout_constraintTop_toBottomOf="@+id/tripType" />
+
+        <EditText
+            android:id="@+id/placestextInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="47dp"
+            android:ems="10"
+            android:hint="Places"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/longitudeInput" />
+
+        <EditText
+            android:id="@+id/languagesTourist"
+            android:layout_width="177dp"
+            android:layout_height="76dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="Languages Available"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pickupPlaceInput" />
+
+        <EditText
+            android:id="@+id/descripition"
+            style="@style/Widget.AppCompat.AutoCompleteTextView"
+            android:layout_width="358dp"
+            android:layout_height="128dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="72dp"
+            android:ems="10"
+            android:hint="Description"
+            android:inputType="textMultiLine"
+            android:selectAllOnFocus="false"
+            android:singleLine="false"
+            android:textAlignment="center"
+            android:padding="@dimen/material_emphasis_medium"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:typeface="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <EditText
+            android:id="@+id/startFromTime"
+            android:layout_width="103dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="Start From"
+            android:inputType="time"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="16dp"
+            android:text="Duration"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/descripition" />
+
+        <EditText
+            android:id="@+id/endTime"
+            android:layout_width="76dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="44dp"
+            android:ems="10"
+            android:hint="To"
+            android:inputType="time"
+            app:layout_constraintBottom_toBottomOf="@+id/startFromTime"
+            app:layout_constraintStart_toEndOf="@+id/startFromTime"
+            app:layout_constraintTop_toTopOf="@+id/startFromTime" />
+
+        <EditText
+            android:id="@+id/dropOffPlaceinput"
+            android:layout_width="156dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="4dp"
+            android:ems="10"
+            android:hint="Drop Off"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toEndOf="@+id/pickupPlaceInput"
+            app:layout_constraintTop_toTopOf="@+id/pickupPlaceInput" />
+
+        <EditText
+            android:id="@+id/pickupPlaceInput"
+            android:layout_width="156dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="Pick Up "
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/startFromTime" />
+
+        <Button
+            android:id="@+id/addImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Add Image"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="@+id/imageView"
+            app:layout_constraintVertical_bias="0.476" />
+
+        <ListView
+            android:id="@+id/LanguagesList"
+            android:layout_width="232dp"
+            android:layout_height="115dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toEndOf="@+id/languagesTourist"
+            app:layout_constraintTop_toTopOf="@+id/languagesTourist" />
+
+        <EditText
+            android:id="@+id/tripType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="132dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="132dp"
+            android:ems="10"
+            android:hint="Trip Type"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/placesList" />
+
+        <ListView
+            android:id="@+id/placesList"
+            android:layout_width="325dp"
+            android:layout_height="167dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/addPlacesButton"
+            app:layout_constraintHorizontal_bias="0.531"
+            app:layout_constraintStart_toStartOf="@+id/placestextInput"
+            app:layout_constraintTop_toBottomOf="@+id/placestextInput" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
